@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import tiktokIcon from "@assets/logos/tiktok-logo.svg";
+import xIcon from "@assets/logos/x-logo.svg";
+import instagramIcon from "@assets/logos/instagram-logo.svg";
+import youtubeIcon from "@assets/logos/youtube-logo.svg";
+
+const iconClasses = "w-auto h-9 md:h-12";
+---
+
+<footer class="mt-6">
+    <!-- Social media link icons -->
+    <div class="flex justify-center gap-8">
+        <a
+            href="https://www.tiktok.com/@revistafan"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <Image src={tiktokIcon} alt="TikTok" class={iconClasses} />
+        </a>
+        <a
+            href="https://x.com/revistafanmx"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <Image src={xIcon} alt="X" class={iconClasses} />
+        </a>
+        <a
+            href="https://www.instagram.com/revistafanmx"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <Image src={instagramIcon} alt="Instagram" class={iconClasses} />
+        </a>
+        <a
+            href="https://youtube.com/@revistafan"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <Image src={youtubeIcon} alt="YouTube" class={iconClasses} />
+        </a>
+    </div>
+    <!-- Footer copyright notice -->
+    <p class="mt-8 p-4 text-center text-sm text-white">
+        &copy; {new Date().getFullYear()} TODOS LOS DERECHOS RESERVADOS, REVISTA
+        FAN Y COOKIE PROYECTS, POR MAX LEYVA.
+    </p>
+</footer>

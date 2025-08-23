@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import ProgressBar from "@components/ProgressBar.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import revistaFanLogo from "@assets/logos/revista-fan-logo.svg";
+import cookieLogo from "@assets/logos/cookie-logo.svg";
 ---
 
+<style>
+    body {
+        background-color: #000000;
+    }
+</style>
+
 <Layout>
-	<Welcome />
+    <div class="relative h-full">
+        <a
+            href="https://www.instagram.com/grupocookie"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="absolute inset-0 z-10 mt-7 w-7 md:w-10"
+        >
+            <Image
+                class="h-auto w-full"
+                src={cookieLogo}
+                alt="Revista Fan Logo"
+            />
+        </a>
+        <div
+            class="absolute inset-0 flex flex-col items-center justify-center gap-8 px-6"
+        >
+            <Image
+                class="w-xl lg:w-4xl"
+                src={revistaFanLogo}
+                alt="Revista Fan Logo"
+            />
+            <p
+                class="text-center text-xl font-bold text-white italic md:text-2xl lg:text-4xl"
+            >
+                EL SITIO ESTARÁ LISTO PRONTO
+            </p>
+            <ProgressBar />
+        </div>
+    </div>
 </Layout>
